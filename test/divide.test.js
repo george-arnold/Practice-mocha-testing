@@ -1,24 +1,29 @@
-const divide = require('../index');
 const expect = require('chai').expect;
+
+const divide = require('../index');
 
 describe('Divide function', () => {
   it('should divide positive integers correctly', () => {
-   const a = 8;
-   const b = 4;
-   const expectedAnswer = 2;
+    // define inputs
+    const a = 8,
+      b = 4,
+      expectedAnswer = 2;
 
-   const actualAnswer = divide(a, b);
+    // invoke the function
+    const actualAnswer = divide(a, b);
 
-   //assertion
+    // assert that expected === actual
     expect(actualAnswer).to.equal(expectedAnswer);
   });
 
   it('should throw an error when divide by zero', () => {
+    // define inputs
     const a = 8, b = 0;
-    const fn = () => {
-      divide(a,b)
-    };
-    //assert that exception is thrown
- expect (fn).to.throw();
+
+    // set up the function call
+    const fn = () => { divide(a, b) };
+
+    // assert that exception is thrown
+    expect(fn).to.throw();
   });
 });
